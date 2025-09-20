@@ -16,14 +16,14 @@ import pino from 'pino'
 import Pino from 'pino'
 import path, { join, dirname } from 'path'
 import { Boom } from '@hapi/boom'
-import { protoType } from './lib/simple.js'
+import { makeWASocket, protoType, serialize } from './lib/simple.js'
 import { Low, JSONFile } from 'lowdb'
 import store from './lib/store.js'
 const { proto } = (await import('@whiskeysockets/baileys')).default
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
-const {  default: makeWASocket, DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } = await import('@whiskeysockets/baileys')
+const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } = await import('@whiskeysockets/baileys')
 import readline, { createInterface } from 'readline'
 import NodeCache from 'node-cache'
 const { CONNECTING } = ws
@@ -46,7 +46,7 @@ say('Powered By Night Light', {
 })
 
 protoType()
-// serialize()
+serialize()
 
 globalThis.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') {
 return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString();
