@@ -22,7 +22,7 @@ import store from './lib/store.js'
 import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
-const proto, makeWASocket, { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } from '@whiskeysockets/baileys'
+import proto, makeWASocket, { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } from '@whiskeysockets/baileys'
 import readline, { createInterface } from 'readline'
 import NodeCache from 'node-cache'
 const { CONNECTING } = ws
