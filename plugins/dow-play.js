@@ -41,7 +41,7 @@ ${dev}`;
     }
 
     if (['play', 'mp3', 'playaudio', 'ytmp3'].includes(command)) {
-      const response = await fetch(`${api.url}/dow/ytmp3v2?url=${encodeURIComponent(url)}&apikey=${api.key}`);
+      const response = await fetch(`${api.url}/dow/ytmp3?url=${encodeURIComponent(url)}&apikey=${api.key}`);
       const result = await response.json();
 
       if (!result.status || !result.data) return m.reply('🐼 Error al descargar el audio.');
@@ -59,30 +59,36 @@ ${dev}`;
         { quoted: m }
       );
     } else if (['play2', 'mp4', 'playvideo', 'ytmp4'].includes(command)) {
-      const response = await fetch(`${api.url}/dow/ytmp4v2?url=${url}&apikey=${api.key}`);
-      const result = await response.json();
+    const response = await fetch(`${api.url}/dow/ytmp4?url=${encodeURIComponent(url)}&apikey=${api.key}`)
+    const result = await response.json()
 
-      if (!result.status || !result.data) return m.reply('🐼 Error al descargar el video.');
+    if (!result.status || !result.data || !result.data.downloadsVideo?.length) {
+     return m.reply('🚩 Error al *descargar* el video')
+    }
 
-      const { dl, title } = result.data;
+    try {
+     const selected = result.data.downloadsVideo.find(v => {
+     const sizeMB = parseFloat(v.size.replace(' MB', ''))
+     return sizeMB <= limit
+  }) || result.data.downloadsVideo[0]
 
-      const res = await fetch(dl);
-      const contentLength = res.headers.get('Content-Length');
-      const fileSize = parseInt(contentLength || '0', 10) / (1024 * 1024);
-      const asDocument = fileSize >= limit;
+  const { url: dl, quality, resolution, size } = selected
+  const title = result.data.title
+  const res = await fetch(dl)
+  const contentLength = res.headers.get('Content-Length')
+  const fileSize = parseInt(contentLength || '0', 10) / (1024 * 1024)
+  const asDocument = fileSize >= limit
 
-      await conn.sendMessage(
-        m.chat,
-        {
-          video: { url: dl },
-          fileName: `${title}.mp4`,
-          mimetype: 'video/mp4',
-          caption: dev,
-         // ptv: true,
-          asDocument
-        },
-        { quoted: m }
-      );
+  await client.sendMessage(
+    m.chat,
+    {
+      video: { url: dl },
+      fileName: `${title}.mp4`,
+      asDocument,
+      mimetype: 'video/mp4'
+    },
+    { quoted: m }
+  )
      } 
   } catch (e) {
     await m.reply('🕸 Error.');
