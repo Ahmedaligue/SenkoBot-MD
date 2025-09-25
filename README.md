@@ -114,10 +114,5 @@ grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https:/
 
 ---
 
-### 🫛 Colaboradores
-<a href="https://github.com/DevAlexJs/SenkoBot-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=DevAlexJs/SenkoBot-MD" /> 
-</a> 
-
 ### 🌾 Autor Del Proyecto
 [![Alexius](https://github.com/DevAlexJs.png?size=100)](https://github.com/DevAlexJs) 
