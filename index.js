@@ -34,7 +34,7 @@ let { say } = cfonts
 
 console.log(chalk.magentaBright('\nIniciando...'))
 
-say('SakuraBot', {
+say('SenkoBot', {
   font: 'simple',
   align: 'left',
   gradient: ['green', 'white']
@@ -64,7 +64,7 @@ globalThis.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).par
 
 global.prefix = new RegExp('^[#!./]')
 
-globalThis.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile('datos.json'))
+globalThis.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile(global.namedb))
 globalThis.DATABASE = globalThis.db; 
 globalThis.loadDatabase = async function loadDatabase() {
 if (globalThis.db.READ) {
