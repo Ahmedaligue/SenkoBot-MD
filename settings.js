@@ -9,16 +9,17 @@ global.owner = ["5492916450307"]
 global.botname = '🦊 SenkoBot-MD'
 global.namebot = '🥗 Senko Bot'
 global.bot = 'SenkoBot'
-global.packname = '🐸 𝗦𝗲𝗻𝗸𝗼𝗕𝗼𝘁-𝗠𝗗'
-global.wm = '🌿 𝙎𝙚𝙣𝙠𝙤𝘽𝙤𝙩-𝙈𝘿'
+global.packname = '🦊 𝗦𝗲𝗻𝗸𝗼𝗕𝗼𝘁-𝗠𝗗'
+global.wm = '🦎 𝙎𝙚𝙣𝙠𝙤𝘽𝙤𝙩-𝙈𝘿'
 global.author = '🥗 DevAlexJs'
 global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ DᴇᴠAʟᴇxJs.'
 
 global.banner = 'https://cdn.stellarwa.xyz/files/1758842352363.jpeg'
 global.icon = 'https://cdn.stellarwa.xyz/files/1758842359325.jpeg'
-global.currency = 'CryptoCoins'
+global.currency = 'Coins'
 global.sessions = 'auth'
 global.jadi = 'auth-sub'
+global.namedb = 'datos.json'
 
 global.api = { 
 url: 'https://api.stellarwa.xyz',
