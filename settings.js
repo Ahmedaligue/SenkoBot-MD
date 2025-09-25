@@ -6,19 +6,19 @@ global.botNumber = ""
 
 global.owner = ["5492916450307"]
 
-global.botname = '🕸 SakuraBot-MD'
-global.namebot = '🥗 Sakura Bot'
-global.bot = 'SakuraBot'
-global.packname = '🐸 𝗦𝗮𝗸𝘂𝗿𝗮𝗕𝗼𝘁-𝗠𝗗'
-global.wm = '🌿 𝙎𝙖𝙠𝙪𝙧𝙖𝘽𝙤𝙩-𝙈𝘿'
+global.botname = '🦊 SenkoBot-MD'
+global.namebot = '🥗 Senko Bot'
+global.bot = 'SenkoBot'
+global.packname = '🐸 𝗦𝗲𝗻𝗸𝗼𝗕𝗼𝘁-𝗠𝗗'
+global.wm = '🌿 𝙎𝙚𝙣𝙠𝙤𝘽𝙤𝙩-𝙈𝘿'
 global.author = '🥗 DevAlexJs'
 global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ DᴇᴠAʟᴇxJs.'
 
-global.banner = 'https://stellarwa.xyz/files/1757377941018.jpeg'
-global.icon = 'https://stellarwa.xyz/files/1757378468505.jpeg'
+global.banner = 'https://cdn.stellarwa.xyz/files/1758842352363.jpeg'
+global.icon = 'https://cdn.stellarwa.xyz/files/1758842359325.jpeg'
 global.currency = 'CryptoCoins'
-global.sessions = 'sessions/session-bot'
-global.jadi = 'sessions/session-sub'
+global.sessions = 'auth'
+global.jadi = 'auth-sub'
 
 global.api = { 
 url: 'https://api.stellarwa.xyz',
