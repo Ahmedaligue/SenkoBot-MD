@@ -1,7 +1,7 @@
 # Código desarrollado por @gata_dios 
 
 #!/data/data/com.termux/files/usr/bin/bash 
-BOT_DIR="SakuraBot-MD"  
+BOT_DIR="SenkoBot-MD"  
 BOT_REPO="https://github.com/DevAlexJs/$BOT_DIR"
 DB_FILE="datos.json"
 
