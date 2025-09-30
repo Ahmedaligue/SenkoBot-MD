@@ -10,6 +10,24 @@
 
 ---
 
+## 🌷 Stellar-API
+
+> 💛 **Visita mi API, puede ser útil para tus proyectos.**  
+> Estaré actualizándola constantemente para que evolucione y que más personas se animen a usarla.
+
+<details>
+  <summary><b>🦠 **Enlaces!**</b></summary>
+
+
+| Tipo      | Link                                                                 |
+|--------------|------------------------------------------------------------------------|
+| 🌱 Api        | [Aquí](https://api.stellarwa.xyz)                         |
+| 🛍️ Shop     | [Aquí](https://api.stellarwa.xyz/store)             |
+| 🐸 Canal     | [Aquí](https://stellarwa.xyz/channel)             |
+<details>
+
+---
+
 ## 🪻 Descripción 
 
 Senko Bot es un bot de WhatsApp multifuncional basado en `baileys`. Este bot ofrece una variedad de características para mejorar tu experiencia en WhatsApp.
