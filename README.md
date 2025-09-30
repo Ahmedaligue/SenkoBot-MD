@@ -16,7 +16,7 @@
 > Estaré actualizándola constantemente para que evolucione y que más personas se animen a usarla.
 
 <details>
-  <summary><b>🦠 **Enlaces!**</b></summary>
+  <summary><b>🦠 Enlaces!</b></summary>
 
 
 | Tipo      | Link                                                                 |
@@ -24,7 +24,7 @@
 | 🌱 Api        | [Aquí](https://api.stellarwa.xyz)                         |
 | 🛍️ Shop     | [Aquí](https://api.stellarwa.xyz/store)             |
 | 🐸 Canal     | [Aquí](https://stellarwa.xyz/channel)             |
-<details>
+</details>
 
 ---
 
