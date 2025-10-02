@@ -225,7 +225,7 @@ export async function handler(chatUpdate) {
 
         if (globalThis.db.data.settings[this.user.jid].self) {
 
-        if (!isVotOwn && !isModeration) {
+        if (!isVotOwn) {
         return
         } else {
         }
