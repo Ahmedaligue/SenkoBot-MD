@@ -101,9 +101,21 @@ export async function handler(chatUpdate) {
                     settings.self = false
                 if (!('botcommando' in settings))                
                     settings.botcommando = 0
+                if (!('currency' in settings))                
+                    settings.currency = 'Coins'
+                if (!('namebot' in settings))                
+                    settings.namebot = 'Senko San'
+                if (!('banner' in settings))                
+                    settings.banner = 'https://cdn.stellarwa.xyz/files/1759425994037.jpeg'
+                if (!('icon' in settings))                
+                    settings.icon = 'https://cdn.stellarwa.xyz/files/1759426039130.jpeg'
             } else globalThis.db.data.settings[this.user.jid] = {
                 self: false,
-                botcommando: 0
+                botcommando: 0,
+                currency: 'Coins',
+                namebot: 'Senko San',
+                banner: 'https://cdn.stellarwa.xyz/files/1759425994037.jpeg',
+                icon: 'https://cdn.stellarwa.xyz/files/1759426039130.jpeg'
             }
         } catch (err) {
             console.error(err)
