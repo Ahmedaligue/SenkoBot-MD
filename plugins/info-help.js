@@ -7,6 +7,10 @@ import { commands } from '../lib/commands.js'
 let handler = async (m, { conn, args, usedPrefix }) => { 
   try {
 
+    const setId = conn.user.jid
+    const set = global.db.data.settings[setId] || {}
+    const botname = set.namebot || ''
+    const banner = set.banner || ''
     const cmdsList = commands
     let now = new Date()
     let colombianTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/Bogota' }))
