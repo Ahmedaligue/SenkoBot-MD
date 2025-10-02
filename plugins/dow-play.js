@@ -89,7 +89,7 @@ ${dev}`;
     },
     { quoted: m }
   )
-     } 
+     } }
   } catch (e) {
     await m.reply('🕸 Error.');
   }
