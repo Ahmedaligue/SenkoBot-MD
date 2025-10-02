@@ -28,7 +28,7 @@ const retryMap = new Map()
 let commandFlags = {}
 if (globalThis.conns instanceof Array) console.log()
 else globalThis.conns = []
-let handler = async (m, { conn, args, usedPrefix, command, isModeration, text }) => {
+let handler = async (m, { conn, args, usedPrefix, command, text }) => {
 let texto = m.mentionedJid
 let who = texto.length > 0 ? texto[0] : (m.quoted ? m.sender : m.sender)
 let num = `${who.split('@')[0]}`
