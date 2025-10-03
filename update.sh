@@ -2,7 +2,7 @@
 
 #!/data/data/com.termux/files/usr/bin/bash 
 BOT_DIR="SenkoBot-MD"  
-BOT_REPO="https://github.com/DevAlexJs/$BOT_DIR"
+BOT_REPO="https://github.com/DevZyxlJs/$BOT_DIR"
 DB_FILE="datos.json"
 
 GREEN='\033[32m'
