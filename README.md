@@ -58,7 +58,7 @@ termux-setup-storage
 apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 ```bash
-git clone https://github.com/DevAlexJs/SenkoBot-MD && cd SenkoBot-MD
+git clone https://github.com/DevZyxlJs/SenkoBot-MD && cd SenkoBot-MD
 ```
 ```bash
 yarn install
@@ -104,7 +104,7 @@ cd && cd SenkoBot-MD && npm start
 ```
 ----
 ### Obtener nuevo código QR 
-> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `SakuraBot-MD $`*
+> *Detén el bot, haz click en el símbolo (ctrl) [default=z] usar la letra "z" + "ENTER" hasta que salga algo verdes similar a: `SenkoBot-MD $`*
 > **Escribe los siguientes comando uno x uno :**
 ```bash 
 cd && cd SenkoBot-MD && rm -rf auth && npm run qr
@@ -124,7 +124,7 @@ cd && cd SenkoBot-MD && rm -rf sessions/session-bot && npm run code
 **Comandos para actualizar SenkoBot-MD de forma automática**
 
 ```bash
-grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/DevAlexJs/SenkoBot-MD/master/update.sh | bash 
+grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https://raw.githubusercontent.com/DevZyxlJs/SenkoBot-MD/master/update.sh | bash 
 ```
 #### Para que no pierda su progreso en SenkoBot, estos comandos realizarán un respaldo de su `datos.json` y se agregará a la versión más reciente.
 > *Estos comandos solo funcionan para TERMUX, REPLIT, LINUX*
@@ -133,4 +133,4 @@ grep -q 'bash\|wget' <(dpkg -l) || apt install -y bash wget && wget -O - https:/
 ---
 
 ### 🌾 Autor Del Proyecto
-[![Alexius](https://github.com/DevAlexJs.png?size=100)](https://github.com/DevAlexJs) 
+[![DevZyxlJs](https://github.com/DevZyxlJs.png?size=100)](https://github.com/DevZyxlJs) 
