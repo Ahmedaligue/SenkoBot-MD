@@ -23,7 +23,7 @@ global.namedb = 'datos.json'
 
 global.api = { 
 url: 'https://api.stellarwa.xyz',
-key: 'Diamond'
+key: 'Angelithixyz'
 }
 
 global.my = {
@@ -34,7 +34,7 @@ global.my = {
   name2: '⚶ ⊹ Max Evolution𝄢 ⊹',
 
   ch3: '120363419837575209@newsletter',
-  name3: '⚶ ⊹ Night ⚡︎ Light - Team 𝄢 ⊹'
+  name3: '⏤͟͟͞͞☆  Night ⚡︎ Light - Team ✿'
 }
 
 const file = fileURLToPath(import.meta.url)
