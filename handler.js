@@ -1,5 +1,5 @@
 import { smsg } from './lib/simple.js'
-import { format } from 'util' 
+import { format } from 'util'
 import { fileURLToPath } from 'url'
 import path, { join } from 'path'
 import fs, { unwatchFile, watchFile } from 'fs'
@@ -21,7 +21,7 @@ export async function handler(chatUpdate) {
     this.pushMessage(chatUpdate.messages).catch(console.error)
     let m = chatUpdate.messages[chatUpdate.messages.length - 1]
     if (!m)
-        return;
+        return
     if (globalThis.db.data == null)
         await globalThis.loadDatabase()
     try {
@@ -93,13 +93,13 @@ export async function handler(chatUpdate) {
                     antilinks: true,
                     bannedGrupo: false
                 }}
-                   
+
             const settings = globalThis.db.data.settings[this.user.jid]
             if (typeof settings !== "object") globalThis.db.data.settings[this.user.jid] = {}
             if (settings) {
-                if (!('self' in settings))                
+                if (!('self' in settings))
                     settings.self = false
-                if (!('botcommando' in settings))                
+                if (!('botcommando' in settings))
                     settings.botcommando = 0
             } else globalThis.db.data.settings[this.user.jid] = {
                 self: false,
@@ -128,13 +128,13 @@ export async function handler(chatUpdate) {
         }
         m.exp += Math.ceil(Math.random() * 10)
         let usedPrefix
-        const groupMetadata = m.isGroup ? { ...(conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}), ...(((conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}).participants) && { participants: ((conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}).participants || []).map(p => ({ ...p, id: p.jid, jid: p.jid, lid: p.lid })) }) } : {};
-    const participants = ((m.isGroup ? groupMetadata.participants : []) || []).map(participant => ({ id: participant.jid, jid: participant.jid, lid: participant.lid, admin: participant.admin }));
+        const groupMetadata = m.isGroup ? { ...(conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}), ...(((conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}).participants) && { participants: ((conn.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null) || {}).participants || []).map(p => ({ ...p, id: p.jid, jid: p.jid, lid: p.lid })) }) } : {}
+    const participants = ((m.isGroup ? groupMetadata.participants : []) || []).map(participant => ({ id: participant.jid, jid: participant.jid, lid: participant.lid, admin: participant.admin }))
         const userGroup = (m.isGroup ? participants.find(u => conn.decodeJid(u.jid) === m.sender) : {}) || {}
-        const botGroup = m.isGroup ? participants.find(u => conn.decodeJid(u.jid) === this.user.jid) : "";
+        const botGroup = m.isGroup ? participants.find(u => conn.decodeJid(u.jid) === this.user.jid) : ""
         const isRAdmin = userGroup?.admin == "superadmin" || false
         const isAdmin = isRAdmin || userGroup?.admin == "admin" || false
-        const isBotAdmin = botGroup?.admin;
+        const isBotAdmin = botGroup?.admin
 
         const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), "./plugins")
         for (const name in globalThis.plugins) {
@@ -221,7 +221,7 @@ export async function handler(chatUpdate) {
 
                 globalThis.comando = command
 
-        const isVotOwn = [this.user.jid, ...globalThis.owner.map(([number]) => number + "@s.whatsapp.net")].includes(m.sender);
+        const isVotOwn = [this.user.jid, ...globalThis.owner.map(([number]) => number + "@s.whatsapp.net")].includes(m.sender)
 
         if (globalThis.db.data.settings[this.user.jid].self) {
 
@@ -231,7 +231,7 @@ export async function handler(chatUpdate) {
         }
         }
 
-// Primary by: Alex 🐼
+
 if (globalThis.db.data.chats[m.chat].primaryBot && globalThis.db.data.chats[m.chat].primaryBot !== this.user.jid) {
 const primaryBotConn = globalThis.conns.find(conn => conn.user.jid === globalThis.db.data.chats[m.chat].primaryBot && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED)
 const participants = m.isGroup ? (await this.groupMetadata(m.chat).catch(() => ({ participants: [] }))).participants : []
@@ -239,7 +239,7 @@ const primaryBotInGroup = participants.some(p => p.jid === globalThis.db.data.ch
 if (primaryBotConn && primaryBotInGroup || globalThis.db.data.chats[m.chat].primaryBot === globalThis.conn.user.jid) {
 throw !1
 } else {
-// globalThis.db.data.chats[m.chat].primaryBot = null
+
 }} else {
 }
 
@@ -352,6 +352,6 @@ global.dfail = (type, m, conn) => {
         moderation: `🕸 El comando *${comando}* solo puede ser ejecutado por los moderadores.`,
         admin: `🕸 El comando *${comando}* solo puede ser ejecutado por los Administradores del Grupo.`,
         botAdmin: `🕸 El comando *${comando}* solo puede ser ejecutado si el Socket es Administrador del Grupo.`
-    }[type];
+    }[type]
     if (msg) return m.reply(msg)
 }

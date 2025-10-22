@@ -1,4 +1,4 @@
-const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } = (await import("@whiskeysockets/baileys"));
+const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } = (await import("@whiskeysockets/baileys"))
 import qrcode from "qrcode"
 import NodeCache from "node-cache"
 import fs from "fs"
@@ -6,7 +6,7 @@ import path from "path"
 import fetch from "node-fetch"
 import pino from 'pino'
 import chalk from 'chalk'
-import util from 'util' 
+import util from 'util'
 import * as ws from 'ws'
 const { child, spawn, exec } = await import('child_process')
 const { CONNECTING } = ws
@@ -32,7 +32,7 @@ let handler = async (m, { conn, args, usedPrefix, command, text }) => {
 let texto = m.mentionedJid
 let who = texto.length > 0 ? texto[0] : (m.quoted ? m.sender : m.sender)
 let num = `${who.split('@')[0]}`
-let id = `${text ? text.replace(/\D/g, '') : num}`  //conn.getName(who)
+let id = `${text ? text.replace(/\D/g, '') : num}`
 let pathSanJadiBot = path.join(`./${jadi}/`, id)
 if (!fs.existsSync(pathSanJadiBot)){
 fs.mkdirSync(pathSanJadiBot, { recursive: true })
@@ -45,16 +45,16 @@ sanJBOptions.usedPrefix = usedPrefix
 sanJBOptions.command = command
 sanJBOptions.fromCommand = true
 sanJadiBot(sanJBOptions, text)
-} 
+}
 handler.help = ['code', 'qr']
 handler.tags = ['jadibot']
 handler.command = ['code', 'qr']
-export default handler 
+export default handler
 
 export async function sanJadiBot(options, text) {
 let { pathSanJadiBot, m, conn, args, usedPrefix, command } = options
 if (command === 'code') {
-command = 'qr'; 
+command = 'qr'
 args.unshift('code')}
 const mcode = args[0] && /(--code|code)/.test(args[0].trim()) ? true : args[1] && /(--code|code)/.test(args[1].trim()) ? true : false
 let txtCode, codeBot, txtQR
@@ -87,7 +87,7 @@ logger: pino({ level: "fatal" }),
 printQRInTerminal: false,
 auth: { creds: state.creds, keys: makeCacheableSignalKeyStore(state.keys, pino({level: 'silent'})) },
 msgRetry,
-msgRetryCache, 
+msgRetryCache,
 browser: ['Windows', 'Firefox'],
 version: version,
 generateHighQualityLinkPreview: true
@@ -105,24 +105,24 @@ if (qr && !mcode) {
 if (m?.chat) {
 txtQR = await conn.sendMessage(m.chat, { image: await qrcode.toBuffer(qr, { scale: 8 }), caption: rtx.trim()}, { quoted: m})
 } else {
-return 
+return
 }
 if (txtQR && txtQR.key) {
 setTimeout(() => { conn.sendMessage(m.sender, { delete: txtQR.key })}, 30000)
 }
 return
-} 
+}
 if (qr && mcode) {
 let fixTe = text ? text.replace(/\D/g, '') : m.sender.split('@')[0]
 let secret = await sock.requestPairingCode(fixTe)
 secret = secret.match(/.{1,4}/g)?.join("-")
-//if (m.isWABusiness) {
+
 txtCode = await conn.sendMessage(m.chat, {text : rtx2}, { quoted: m })
 codeBot = await m.reply(secret)
-//} else {
-//txtCode = await conn.sendButton(m.chat, rtx2.trim(), wm, null, [], secret, null, m) 
-//}
-//console.log(secret)
+
+
+
+
 }
 if (txtCode && txtCode.key) {
 setTimeout(() => { conn.sendMessage(m.sender, { delete: txtCode.key })}, 30000)
@@ -137,8 +137,8 @@ sock.ws.close()
 } catch {
 }
 sock.ev.removeAllListeners()
-let i = globalThis.conns.indexOf(sock)                
-if (i < 0) return 
+let i = globalThis.conns.indexOf(sock)
+if (i < 0) return
 delete globalThis.conns[i]
 globalThis.conns.splice(i, 1)
 }}
@@ -167,7 +167,7 @@ fs.rmdirSync(pathSanJadiBot, { recursive: true })
 }
 if (reason === 515) {
 console.log(`\n${chalk.bold.whiteBright.bgRed('WARNING:')} ${chalk.bold.magentaBright(`Reinicio automatico para +${path.basename(pathSanJadiBot)}.`)}`)
-// await startSub()
+
 await creloadHandler(true).catch(console.error)
 }
 if (reason === 403) {
@@ -195,11 +195,11 @@ let chtxt = ` ֯　ׅ🫗ֶ֟ㅤ *Usuario ›* ${userName}
  ׄ 🌿 ׅ り *Bot ›* ${wm}
  ׄ 🥗 ׅ り *Versión del bot ›* ^0.0.9
 
-> *¡Conviértete en un sub-bot ahora, únete al grupo oficial!*\nhttps://stellarwa.xyz/sakura`
+> *¡Conviértete en un sub-bot ahora, únete al grupo oficial!*\nhttps:
 
-let ppch = await sock.profilePictureUrl(m.sender, 'image').catch(_ => "https://stellarwa.xyz/files/1757206448404.jpeg")
+let ppch = await sock.profilePictureUrl(m.sender, 'image').catch(_ => "https:
 await global.conn.sendMessage(my.ch5, { text: chtxt,
-contextInfo: { 
+contextInfo: {
 externalAdReply: {
 title: "🕸 𝗜𝗡𝗙𝗢𝗥𝗠𝗔𝗖𝗜𝗢́𝗡 🕸",
 body: '🐼 ¡Nuevo sub-bot encontrado!',
@@ -208,7 +208,7 @@ sourceUrl: redes,
 mediaType: 2,
 showAdAttribution: false,
 renderLargerThumbnail: false
-}}}, { quoted: null }) 
+}}}, { quoted: null })
 } catch {
 console.log(chalk.gray('[ 🐼  ]  Error al enviar el mensaje al canal.'))
 }*/
@@ -225,11 +225,11 @@ globalThis.conns.push(sock)
 }}
 setInterval(async () => {
 if (!sock.user) {
-try { sock.ws.close() } catch (e) {      
-//console.log(await creloadHandler(true).catch(console.error))
+try { sock.ws.close() } catch (e) {
+
 }
 sock.ev.removeAllListeners()
-let i = globalThis.conns.indexOf(sock)                
+let i = globalThis.conns.indexOf(sock)
 if (i < 0) return
 delete globalThis.conns[i]
 globalThis.conns.splice(i, 1)
@@ -272,19 +272,19 @@ creloadHandler(false)
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 function sleep(ms) {
-return new Promise(resolve => setTimeout(resolve, ms));}
+return new Promise(resolve => setTimeout(resolve, ms))}
 function msToTime(duration) {
 var milliseconds = parseInt((duration % 1000) / 100),
 seconds = Math.floor((duration / 1000) % 60),
 minutes = Math.floor((duration / (1000 * 60)) % 60),
-hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-hours = (hours < 10) ? '0' + hours : hours;
-minutes = (minutes > 0) ? minutes : '';
-seconds = (seconds < 10 && minutes > 0) ? '0' + seconds : seconds;
+hours = Math.floor((duration / (1000 * 60 * 60)) % 24)
+hours = (hours < 10) ? '0' + hours : hours
+minutes = (minutes > 0) ? minutes : ''
+seconds = (seconds < 10 && minutes > 0) ? '0' + seconds : seconds
 if (minutes) {
-return `${minutes} minuto${minutes > 1 ? 's' : ''}, ${seconds} segundo${seconds > 1 ? 's' : ''}`;
+return `${minutes} minuto${minutes > 1 ? 's' : ''}, ${seconds} segundo${seconds > 1 ? 's' : ''}`
 } else {
-return `${seconds} segundo${seconds > 1 ? 's' : ''}`;
+return `${seconds} segundo${seconds > 1 ? 's' : ''}`
 }
 }
 

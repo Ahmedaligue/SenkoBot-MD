@@ -3,7 +3,7 @@ import fetch from 'node-fetch'
 const handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, '🕸 Ingresa el enlace o término de búsqueda de TikTok.', m)
 
-  const isUrl = /(?:https?:\/\/)?(?:www\.)?(?:vm|vt|t)?\.?tiktok\.com\/([^\s]+)/gi.test(text) 
+  const isUrl = /(?:https?:\/\/)?(?:www\.)?(?:vm|vt|t)?\.?tiktok\.com\/([^\s]+)/gi.test(text)
   const apiUrl = isUrl
     ? `${api.url}/dow/tiktok?url=${text}&apikey=${api.key}`
     : `${api.url}/search/tiktok?query=${encodeURIComponent(text)}&apikey=${api.key}`
