@@ -32,4 +32,4 @@ handler.help = ['self'];
 handler.tags = ['jadibot'];
 handler.command = ['self'];
 
-module.exports = handler;
+export default handler;

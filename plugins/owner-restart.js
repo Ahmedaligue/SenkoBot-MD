@@ -10,4 +10,4 @@ handler.tags = ['owner'];
 handler.command = ['restart'];
 handler.owner = true;
 
-module.exports = handler;
+export default handler;

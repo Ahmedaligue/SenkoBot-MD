@@ -1,4 +1,4 @@
-const ws = require("ws")
+import ws from 'ws'
 
 async function handler(m, { conn: stars, usedPrefix }) {
   let uniqueUsers = new Map()
@@ -23,4 +23,4 @@ async function handler(m, { conn: stars, usedPrefix }) {
 handler.command = ['sockets', 'bots']
 handler.help = ['bots', 'sockets']
 handler.tags = ['jadibot']
-module.exports = handler
+export default handler

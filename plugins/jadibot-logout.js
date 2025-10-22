@@ -1,6 +1,6 @@
-const fs = require("fs")
-const path = require("path")
-const { jidDecode } = require("@whiskeysockets/baileys")
+import fs from 'fs';
+import path from 'path';
+import { jidDecode } from '@whiskeysockets/baileys';
 
 let handler = async (m, { conn, prefa, msgglobal }) => {
   const rawId = conn.user?.id || '';
@@ -43,4 +43,4 @@ handler.help = ['logout'];
 handler.tags = ['jadibot'];
 handler.command = ['logout'];
 
-module.exports = handler;
+export default handler;

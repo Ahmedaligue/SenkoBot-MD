@@ -32,4 +32,4 @@ handler.help = ['ping', 'p'];
 handler.tags = ['info'];
 handler.command = ['ping', 'p'];
 
-module.exports = handler;
+export default handler;

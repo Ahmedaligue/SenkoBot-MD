@@ -1,5 +1,5 @@
-const { generateWAMessageFromContent } = require("@whiskeysockets/baileys")
-const fs = require("fs")
+import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
+import * as fs from 'fs'
 
 var handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
 if (!m.quoted && !text) return conn.reply(m.chat, `🕸 Por favor, ingresa un texto o cita un mensaje.`, m)
@@ -38,4 +38,4 @@ handler.tags = ['group']
 handler.command = ['hidetag', 'tag']
 handler.admin = true
 
-module.exports = handler
+export default handler

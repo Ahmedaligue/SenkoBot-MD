@@ -1,5 +1,5 @@
-const fetch = require("node-fetch")
-const { format } = require("util")
+import fetch from 'node-fetch';
+import { format } from 'util';
 
 let handler = async (m, { conn, args }) => {
   const argsText = args.join(' ').trim();
@@ -46,4 +46,4 @@ handler.help = ['get'];
 handler.tags = ['utils'];
 handler.command = ['get'];
 
-module.exports = handler;
+export default handler;

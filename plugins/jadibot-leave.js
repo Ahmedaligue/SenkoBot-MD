@@ -23,4 +23,4 @@ handler.help = ['leave'];
 handler.tags = ['jadibot'];
 handler.command = ['leave'];
 
-module.exports = handler;
+export default handler;

@@ -1,8 +1,8 @@
-const fetch = require("node-fetch")
-const fs = require("fs")
-const axios = require("axios")
-const moment = require("moment-timezone")
-const { commands } = require("../lib/commands.js")
+import fetch from 'node-fetch'
+import fs from 'fs'
+import axios from 'axios'
+import moment from 'moment-timezone'
+import { commands } from '../lib/commands.js'
 
 let handler = async (m, { conn, args, usedPrefix }) => { 
   try {
@@ -119,4 +119,4 @@ sourceUrl: null,
 handler.help = ['menu', 'help']
 handler.tags = ['info']
 handler.command = ['menu', 'help'] 
-module.exports = handler
+export default handler

@@ -1,4 +1,4 @@
-const axios = require("axios")
+import axios from 'axios';
 
 function isValidMediafireUrl(url) {
   try {
@@ -83,4 +83,4 @@ handler.help = ['mediafire', 'mf'];
 handler.tags = ['dow'];
 handler.command = ['mediafire', 'mf'];
 
-module.exports = handler;
+export default handler;

@@ -47,4 +47,4 @@ handler.command = ['kick'];
 handler.admin = true;
 handler.botAdmin = true;
 
-module.exports = handler;
+export default handler;

@@ -38,4 +38,4 @@ handler.help = ['pfp', 'getpic'];
 handler.tags = ['utils'];
 handler.command = ['pfp', 'getpic'];
 
-module.exports = handler;
+export default handler;

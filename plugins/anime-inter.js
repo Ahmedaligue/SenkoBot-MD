@@ -6,7 +6,7 @@
  - Todos los derechos reservados por el author.
 */
 
-const fetch = require("node-fetch")
+import fetch from 'node-fetch';
 
 const captions = {
 peek: (from, to, genero) => from === to  ? 'está espiando detrás de una puerta por diversión.'  : `está espiando a`,
@@ -143,4 +143,4 @@ handler.help = ['angry', 'bleh', 'bored', 'aburrido', 'beso', 'clap', 'coffee', 
 handler.tags = ['anime'];
 handler.command = ['angry', 'bleh', 'bored', 'aburrido', 'beso', 'clap', 'coffee', 'cafe', 'dramatic', 'drama', 'drunk', 'impregnate', 'preg', 'kisscheek', 'laugh', 'love', 'amor', 'pout', 'punch', 'run', 'correr', 'sad', 'triste', 'scared', 'seduce', 'shy', 'timido', 'sleep', 'smoke', 'fumar', 'spit', 'escupir', 'step', 'pisar', 'think', 'walk', 'hug', 'kill', 'eat', 'nom', 'comer', 'kiss', 'muak', 'wink', 'pat', 'happy', 'bully', 'bite', 'morder', 'blush', 'wave', 'bath', 'smug', 'smile', 'highfive', 'handhold', 'cringe', 'bonk', 'cry', 'lick', 'slap', 'dance', 'love', 'amor', 'cuddle', 'cold', 'sing', 'tickle', 'scream', 'push', 'nope', 'jump', 'heat', 'gaming', 'draw', 'call', 'feliz', 'snuggle', 'blowkiss', 'trip', 'stare', 'sniff', 'curious', 'thinkhard', 'comfort', 'peek'];
 
-module.exports = handler;
+export default handler;

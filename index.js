@@ -1,31 +1,31 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '1'
 import './settings.js'
-const { startSub } = require("./lib/conexion.js")
-const cfonts = require("cfonts")
-const { createRequire } = require("module")
-const { fileURLToPath, pathToFileURL } = require("url")
-const { platform } = require("process")
-const ws = require("ws")
+import { startSub } from './lib/conexion.js'
+import cfonts from 'cfonts'
+import { createRequire } from 'module'
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
+import * as ws from 'ws'
 import fs, { readdirSync, statSync, unlinkSync, existsSync, mkdirSync, readFileSync, rmSync, watch } from 'fs'
-const yargs = require("yargs")
-const { spawn, execSync } = require("child_process")
-const lodash = require("lodash")
-const chalk = require("chalk")
-const syntaxerror = require("syntax-error")
-const pino = require("pino")
-const Pino = require("pino")
+import yargs from 'yargs';
+import { spawn, execSync } from 'child_process'
+import lodash from 'lodash'
+import chalk from 'chalk'
+import syntaxerror from 'syntax-error'
+import pino from 'pino'
+import Pino from 'pino'
 import path, { join, dirname } from 'path'
-const { Boom } = require("@hapi/boom")
-const { makeWASocket, protoType, serialize } = require("./lib/simple.js")
-const { Low, JSONFile } = require("lowdb")
-const store = require("./lib/store.js")
+import { Boom } from '@hapi/boom'
+import { makeWASocket, protoType, serialize } from './lib/simple.js'
+import { Low, JSONFile } from 'lowdb'
+import store from './lib/store.js'
 const { proto } = (await import('@whiskeysockets/baileys')).default
-const pkg = require("google-libphonenumber")
+import pkg from 'google-libphonenumber'
 const { PhoneNumberUtil } = pkg
 const phoneUtil = PhoneNumberUtil.getInstance()
 const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser } = await import('@whiskeysockets/baileys')
 import readline, { createInterface } from 'readline'
-const NodeCache = require("node-cache")
+import NodeCache from 'node-cache'
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
