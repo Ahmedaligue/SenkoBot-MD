@@ -14,15 +14,15 @@ global.wm = '🦎 𝙎𝙚𝙣𝙠𝙤𝘽𝙤𝙩-𝙈𝘿'
 global.author = '🥗 DevAlexJs'
 global.dev = '© Pᴏᴡᴇʀᴇᴅ Bʏ DᴇᴠZʏxʟJs.'
 
-global.banner = 'https:
-global.icon = 'https:
+global.banner = 'https://cdn.stellarwa.xyz/files/1758842352363.jpeg'
+global.icon = 'https://cdn.stellarwa.xyz/files/1758842359325.jpeg'
 global.currency = 'Coins'
 global.sessions = 'auth'
 global.jadi = 'auth-sub'
 global.namedb = 'datos.json'
 
-global.api = {
-url: 'https:
+global.api = { 
+url: 'https://api.stellarwa.xyz',
 key: 'Angelithixyz'
 }
 
@@ -30,7 +30,7 @@ global.my = {
   ch: '120363420992828502@newsletter',
   name: '₊· ͟͟͞͞꒰ ✩ 𝐒𝐭𝐞𝐥𝐥𝐚𝐫 𝐖𝐚𝐁𝐨𝐭 - 𝐎𝐟𝐟𝐢𝐜𝐢𝐚𝐥 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ⏤͟͟͞͞✿',
 
-  ch2: '120363203805910750@newsletter',
+  ch2: '120363203805910750@newsletter', 
   name2: '⚶ ⊹ Max Evolution𝄢 ⊹',
 
   ch3: '120363419837575209@newsletter',

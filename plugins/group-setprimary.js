@@ -15,14 +15,14 @@ const handler = async (m, { conn }) => {
   if (!subBots.includes(who)) return conn.reply(m.chat, `🕸 El usuario mencionado no es un Socket de Sakura Bot.`, m)
 
   if (chat.primaryBot === who) {
-    return conn.reply(m.chat, `@${who.split`@`[0]} ya es el Bot principal del Grupo.`, m, { mentions: [who] })
+    return conn.reply(m.chat, `@${who.split`@`[0]} ya es el Bot principal del Grupo.`, m, { mentions: [who] });
   }
 
   try {
     chat.primaryBot = who
     conn.reply(m.chat, `🐼 Se ha establecido a @${who.split`@`[0]} como bot primario de este grupo.\n> Ahora todos los comandos de este grupo serán ejecutados por @${who.split`@`[0]}.`, m, { mentions: [who] })
   } catch (e) {
-    await m.reply(`${e}`)
+    await m.reply(`${e}`);
   }
 }
 

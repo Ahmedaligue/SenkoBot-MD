@@ -1,13 +1,13 @@
 let handler = async (m, { conn }) => {
-  await conn.reply(m.chat, `🌾 Reiniciando el Socket...\n> 🐼 *Espere un momento...*`, m)
+  await conn.reply(m.chat, `🌾 Reiniciando el Socket...\n> 🐼 *Espere un momento...*`, m);
   setTimeout(() => {
-    process.exit(0)
-  }, 3000)
-}
+    process.exit(0);
+  }, 3000);
+};
 
-handler.help = ['restart']
-handler.tags = ['owner']
-handler.command = ['restart']
-handler.owner = true
+handler.help = ['restart'];
+handler.tags = ['owner'];
+handler.command = ['restart'];
+handler.owner = true;
 
-export default handler
+export default handler;

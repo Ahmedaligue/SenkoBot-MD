@@ -4,7 +4,7 @@ import axios from 'axios'
 import moment from 'moment-timezone'
 import { commands } from '../lib/commands.js'
 
-let handler = async (m, { conn, args, usedPrefix }) => {
+let handler = async (m, { conn, args, usedPrefix }) => { 
   try {
 
     const cmdsList = commands
@@ -13,7 +13,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     let tiempo = colombianTime.toLocaleDateString('en-GB', {
       day: '2-digit',
       month: 'short',
-      year: 'numeric',
+      year: 'numeric', 
     }).replace(/,/g, '')
 
     let tiempo2 = moment.tz('America/Bogota').format('hh:mm A')
@@ -27,7 +27,7 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     let botType = isOficialBot ? 'Principal' : 'Sub-Bot'
 
 const jam = moment.tz('America/Bogota').locale('id').format('HH:mm:ss')
-const ucapan = jam < '05:00:00' ? 'Buen día' : jam < '11:00:00' ? 'Buen día' : jam < '15:00:00' ? 'Buenas tardes' : jam < '18:00:00' ? 'Buenas tardes' : jam < '19:00:00' ? 'Buenas tardes' : jam < '23:59:00' ? 'Buenas noches' : 'Buenas noches'
+const ucapan = jam < '05:00:00' ? 'Buen día' : jam < '11:00:00' ? 'Buen día' : jam < '15:00:00' ? 'Buenas tardes' : jam < '18:00:00' ? 'Buenas tardes' : jam < '19:00:00' ? 'Buenas tardes' : jam < '23:59:00' ? 'Buenas noches' : 'Buenas noches';
 
 let menu = `\n\n`
 menu += `> . ﹡ ﹟ 🌹 ׄ ⬭ ${ucapan}  *${m.pushName ? m.pushName : 'Sin nombre'}*\n\n`
@@ -36,37 +36,37 @@ menu += `ׅㅤ𓏸𓈒ㅤׄ *Plugins ›* ${plugins}\n`
 menu += `ׅㅤ𓏸𓈒ㅤׄ *Versión ›* ^0.0.9 ⋆. 𐙚 ˚\n\n`
 menu += `ׅㅤ𓏸𓈒ㅤׄ *Fecha ›* ${tiempo}, ${tiempo2}\n`
 
-    const categoryArg = args[0]?.toLowerCase()
-    const categories = {}
+    const categoryArg = args[0]?.toLowerCase();
+    const categories = {};
 
     for (const command of cmdsList) {
-      const category = command.category || 'otros'
+      const category = command.category || 'otros';
       if (!categories[category]) {
-        categories[category] = []
+        categories[category] = [];
       }
-      categories[category].push(command)
+      categories[category].push(command);
     }
 
     if (categoryArg && !categories[categoryArg]) {
-      return m.reply(`⭐ La categoría *${categoryArg}* no encontrada.`)
+      return m.reply(`⭐ La categoría *${categoryArg}* no encontrada.`);
     }
 
     for (const [category, cmds] of Object.entries(categories)) {
       if (categoryArg && category.toLowerCase() !== categoryArg) {
-        continue
+        continue;
       }
       const catName = category.charAt(0).toUpperCase() + category.slice(1)
       menu += `\nㅤ🍂ᯭ⁾ ㅤׄ  ꤥㅤׄㅤꤪꤨ${catName}ㅤꤪꤨㅤ֢ㅤׄㅤׅ\n`
       cmds.forEach(cmd => {
-      const match = usedPrefix.match(/[#\/+.!-]$/)
-const separator = match ? match[0] : ''
-      const cleanPrefix = separator ? separator : usedPrefix
+      const match = usedPrefix.match(/[#\/+.!-]$/);
+const separator = match ? match[0] : '';
+      const cleanPrefix = separator ? separator : usedPrefix;
       const aliases = cmd.alias.map(a => {
-  const aliasClean = a.split(/[\/#!+.\-]+/).pop().toLowerCase()
-      return `${cleanPrefix}${aliasClean}`}).join(' › ')
-        menu += `֯　ׅ🍃ֶ֟፝֯ㅤ *${aliases}* ${cmd.uso ? `+ ${cmd.uso}` : ''}\n`
-        menu += `> _*${cmd.desc}*_\n`
-      })
+  const aliasClean = a.split(/[\/#!+.\-]+/).pop().toLowerCase();
+      return `${cleanPrefix}${aliasClean}`}).join(' › ');
+        menu += `֯　ׅ🍃ֶ֟፝֯ㅤ *${aliases}* ${cmd.uso ? `+ ${cmd.uso}` : ''}\n`;
+        menu += `> _*${cmd.desc}*_\n`;
+      });
     }
 
   const canales = Object.entries(global.my)
@@ -100,7 +100,7 @@ newsletterName: channelRD.nombre
 },
 externalAdReply: {
 title: botname,
-body: dev,
+body: dev, 
 showAdAttribution: false,
 thumbnailUrl: banner,
 mediaType: 1,
@@ -118,5 +118,5 @@ sourceUrl: null,
 
 handler.help = ['menu', 'help']
 handler.tags = ['info']
-handler.command = ['menu', 'help']
+handler.command = ['menu', 'help'] 
 export default handler

@@ -1,28 +1,28 @@
-import ws from 'ws'
-import fs from 'fs'
+import ws from 'ws';
+import fs from 'fs';
 
 const handler = async (m, { conn, groupMetadata }) => {
-    const groupName = groupMetadata.subject
-    const groupCreator = groupMetadata.ownerJid ? '@' + groupMetadata.ownerJid.split('@')[0] : groupMetadata.owner ? '@' + groupMetadata.owner.split('@')[0] : 'Desconocido'
-    const totalParticipants = groupMetadata.participants.length
+    const groupName = groupMetadata.subject;
+    const groupCreator = groupMetadata.ownerJid ? '@' + groupMetadata.ownerJid.split('@')[0] : groupMetadata.owner ? '@' + groupMetadata.owner.split('@')[0] : 'Desconocido';
+    const totalParticipants = groupMetadata.participants.length;
 
-    let totalCoins = 0
-    let registeredUsersInGroup = 0
+    let totalCoins = 0;
+    let registeredUsersInGroup = 0;
 
-    const chatId = m.chat
-    const chat = globalThis.db.data.chats[chatId] || {}
-    const chatUsers = global.db.data.users || {}
+    const chatId = m.chat;
+    const chat = globalThis.db.data.chats[chatId] || {};
+    const chatUsers = global.db.data.users || {};
 
     groupMetadata.participants.forEach(participant => {
-        const user = chatUsers[participant.id]
+        const user = chatUsers[participant.id];
         if (user) {
-            registeredUsersInGroup++
-            totalCoins += user.chocolates || 0
+            registeredUsersInGroup++;
+            totalCoins += user.chocolates || 0;
         }
-    })
+    });
 
-    const rawPrimary = typeof chat.primaryBot === 'string' ? chat.primaryBot : ''
-    const botprimary = rawPrimary.endsWith('@s.whatsapp.net') ? `@${rawPrimary.split('@')[0]}` : 'Aleatorio'
+    const rawPrimary = typeof chat.primaryBot === 'string' ? chat.primaryBot : '';
+    const botprimary = rawPrimary.endsWith('@s.whatsapp.net') ? `@${rawPrimary.split('@')[0]}` : 'Aleatorio';
 
     const settings = {
         bot: chat.bannedGrupo ? '✘ Desactivado' : '✓ Activado',
@@ -34,7 +34,7 @@ const handler = async (m, { conn, groupMetadata }) => {
         nsfw: chat.nsfw ? '✓ Activado' : '✘ Desactivado',
         adminMode: chat.adminonly ? '✓ Activado' : '✘ Desactivado',
         botprimary: botprimary,
-    }
+    };
 
     try {
       let message = `🍋‍🟩۫᷒ᰰ⃘ׅ᷒  *Grupo ›* ${groupName}\n\n`
@@ -51,17 +51,17 @@ const handler = async (m, { conn, groupMetadata }) => {
       message += `ׅ  ׄ 🌿 ׅ り Nsfw › *${settings.nsfw}*\n`
       message += `ׅ  ׄ 🌿 ׅ り ModoAdmin › *${settings.adminMode}*`
 
-        const mentionOw = groupMetadata.ownerJid ? groupMetadata.ownerJid : groupMetadata.owner ? groupMetadata.owner : ''
-        const mentions = [rawPrimary, mentionOw].filter(Boolean)
+        const mentionOw = groupMetadata.ownerJid ? groupMetadata.ownerJid : groupMetadata.owner ? groupMetadata.owner : '';
+        const mentions = [rawPrimary, mentionOw].filter(Boolean);
 
-        await conn.reply(m.chat, message.trim(), m, { mentions })
+        await conn.reply(m.chat, message.trim(), m, { mentions });
     } catch (e) {
-        await m.reply(`❌ Error: ${e}`)
+        await m.reply(`❌ Error: ${e}`);
     }
-}
+};
 
-handler.help = ['gp', 'groupinfo']
-handler.tags = ['group']
-handler.command = ['gp', 'groupinfo']
+handler.help = ['gp', 'groupinfo'];
+handler.tags = ['group'];
+handler.command = ['gp', 'groupinfo'];
 
-export default handler
+export default handler;
