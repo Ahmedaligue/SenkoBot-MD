@@ -1,5 +1,5 @@
-import ws from 'ws';
-import fs from 'fs';
+const ws = require("ws")
+const fs = require("fs")
 
 const handler = async (m, { conn, groupMetadata }) => {
     const groupName = groupMetadata.subject;
@@ -64,4 +64,4 @@ handler.help = ['gp', 'groupinfo'];
 handler.tags = ['group'];
 handler.command = ['gp', 'groupinfo'];
 
-export default handler;
+module.exports = handler;

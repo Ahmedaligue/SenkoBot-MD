@@ -1,4 +1,4 @@
-import { canLevelUp, xpRange } from '../lib/levelling.js';
+const { canLevelUp, xpRange } = require("../lib/levelling.js")
 
 let handler = m => m;
 handler.before = async function (m, { conn }) {
@@ -16,4 +16,4 @@ handler.before = async function (m, { conn }) {
      return true;
 };
 
-export default handler;
+module.exports = handler;

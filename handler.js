@@ -1,11 +1,11 @@
-import { smsg } from './lib/simple.js'
-import { format } from 'util' 
-import { fileURLToPath } from 'url'
+const { smsg } = require("./lib/simple.js")
+const { format } = require("util") 
+const { fileURLToPath } = require("url")
 import path, { join } from 'path'
 import fs, { unwatchFile, watchFile } from 'fs'
-import chalk from 'chalk'
-import fetch from 'node-fetch'
-import ws from 'ws'
+const chalk = require("chalk")
+const fetch = require("node-fetch")
+const ws = require("ws")
 
 const isNumber = x => typeof x === "number" && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {

@@ -17,4 +17,4 @@ handler.before = async function (m, { conn }) {
   // return true
 }
 
-export default handler
+module.exports = handler

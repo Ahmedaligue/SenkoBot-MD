@@ -36,4 +36,4 @@ handler.command = ['closet', 'open'];
 handler.admin = true;
 handler.botAdmin = true;
 
-export default handler;
+module.exports = handler;

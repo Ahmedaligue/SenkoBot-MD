@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require("node-fetch")
 
 const handler = async (m, { conn, args, text }) => {
   if (!db.data.chats[m.chat].nsfw)
@@ -30,4 +30,4 @@ handler.help = ['danbooru', 'dbooru'];
 handler.command = ['danbooru', 'dbooru'];
 handler.tags = ['nsfw'];
 
-export default handler;
+module.exports = handler;

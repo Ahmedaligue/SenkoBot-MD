@@ -33,4 +33,4 @@ handler.command = ['demote'];
 handler.admin = true;
 handler.botAdmin = true;
 
-export default handler;
+module.exports = handler;

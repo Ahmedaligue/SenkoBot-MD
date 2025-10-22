@@ -1,5 +1,5 @@
-import yts from 'yt-search';
-import fetch from 'node-fetch';
+const yts = require("yt-search")
+const fetch = require("node-fetch")
 const limit = 100;
 
 const isYTUrl = (url) => /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.be)\/.+$/i.test(url);
@@ -98,4 +98,4 @@ ${dev}`;
 handler.command = handler.help = ['play', 'mp3', 'playaudio', 'ytmp3', 'play2', 'mp4', 'playvideo', 'ytmp4'];
 handler.tags = ['dow'];
 
-export default handler;
+module.exports = handler;

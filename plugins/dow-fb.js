@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require("node-fetch")
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
   try {
@@ -46,4 +46,4 @@ handler.help = ['fb', 'facebook'];
 handler.tags = ['dow'];
 handler.command = ['fb', 'facebook'];
 
-export default handler;
+module.exports = handler;

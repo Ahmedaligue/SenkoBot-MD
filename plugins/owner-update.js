@@ -1,4 +1,4 @@
-import { execSync } from 'child_process'
+const { execSync } = require("child_process")
 
 var handler = async (m, { conn, text }) => {
 
@@ -43,4 +43,4 @@ await conn.reply(m.chat, errorMessage2, m)
 handler.command = ['update', 'actualizar']
 handler.owner = true
 
-export default handler
+module.exports = handler

@@ -1,4 +1,4 @@
-import ws from 'ws'
+const ws = require("ws")
 
 const handler = async (m, { conn }) => {
   const subBots = [...new Set([...globalThis.conns.filter((conn) => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map((conn) => conn.user.jid)])]
@@ -31,4 +31,4 @@ handler.tags = ['group']
 handler.command = ['setprimary']
 handler.admin = true
 
-export default handler
+module.exports = handler

@@ -6,7 +6,7 @@
  - Todos los derechos reservados por el author.
 */
 
-import fetch from 'node-fetch';
+const fetch = require("node-fetch")
 
 const captions = {      
   anal: (from, to) => from === to ? 'se la metió en el ano.' : 'se la metió en el ano a',
@@ -83,4 +83,4 @@ handler.help = ['anal', 'cum', 'undress', 'encuerar', 'fuck', 'coger', 'spank', 
 handler.tags = ['anime'];
 handler.command = ['anal', 'cum', 'undress', 'encuerar', 'fuck', 'coger', 'spank', 'nalgada', 'lickpussy', 'fap', 'paja', 'grope', 'sixnine', '69', 'suckboobs', 'grabboobs', 'blowjob', 'bj', 'boobjob', 'footjob'];
 
-export default handler;
+module.exports = handler;

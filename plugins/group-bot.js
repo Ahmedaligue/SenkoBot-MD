@@ -39,4 +39,4 @@ handler.help = ['bot'];
 handler.command = ['bot'];
 handler.admin = true;
 
-export default handler;
+module.exports = handler;

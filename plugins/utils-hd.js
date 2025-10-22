@@ -1,5 +1,5 @@
-import fetch from 'node-fetch';
-import FormData from 'form-data';
+const fetch = require("node-fetch")
+const FormData = require("form-data")
 
 async function uploadToUguu(buffer) {
   const body = new FormData();
@@ -60,4 +60,4 @@ handler.help = ['hd'];
 handler.tags = ['utils'];
 handler.command = ['hd'];
 
-export default handler;
+module.exports = handler;

@@ -1,17 +1,17 @@
 const { useMultiFileAuthState, DisconnectReason, makeCacheableSignalKeyStore, fetchLatestBaileysVersion } = (await import("@whiskeysockets/baileys"));
-import qrcode from "qrcode"
-import NodeCache from "node-cache"
-import fs from "fs"
-import path from "path"
-import fetch from "node-fetch"
-import pino from 'pino'
-import chalk from 'chalk'
-import util from 'util' 
-import * as ws from 'ws'
+const qrcode = require("qrcode")
+const NodeCache = require("node-cache")
+const fs = require("fs")
+const path = require("path")
+const fetch = require("node-fetch")
+const pino = require("pino")
+const chalk = require("chalk")
+const util = require("util") 
+const ws = require("ws")
 const { child, spawn, exec } = await import('child_process')
 const { CONNECTING } = ws
-import { makeWASocket } from '../lib/simple.js'
-import { fileURLToPath } from 'url'
+const { makeWASocket } = require("../lib/simple.js")
+const { fileURLToPath } = require("url")
 let crm1 = "Y2QgcGx1Z2lucy"
 let crm2 = "A7IG1kNXN1b"
 let crm3 = "SBpbmZvLWRvbmFyLmpz"
@@ -49,7 +49,7 @@ sanJadiBot(sanJBOptions, text)
 handler.help = ['code', 'qr']
 handler.tags = ['jadibot']
 handler.command = ['code', 'qr']
-export default handler 
+module.exports = handler 
 
 export async function sanJadiBot(options, text) {
 let { pathSanJadiBot, m, conn, args, usedPrefix, command } = options

@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+const fetch = require("node-fetch")
 
 const handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, '🕸 Ingresa el enlace o término de búsqueda de TikTok.', m)
@@ -58,4 +58,4 @@ handler.help = ['tiktok', 'tt']
 handler.tags = ['dow']
 handler.command = ['tiktok', 'tt']
 
-export default handler
+module.exports = handler

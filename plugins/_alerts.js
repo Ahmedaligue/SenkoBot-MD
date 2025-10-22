@@ -1,6 +1,6 @@
 let WAMessageStubType = (await import('@whiskeysockets/baileys')).default
-import fs from 'fs'
-import path from 'path'
+const fs = require("fs")
+const path = require("path")
 
 const groupMetadataCache = new Map();
 const lidCache = new Map();
@@ -39,7 +39,7 @@ messageStubParameters: m.messageStubParameters,
 type: WAMessageStubType[m.messageStubType], 
 })
 }}
-export default handler
+module.exports = handler
 
 async function resolveLidToRealJid(lid, conn, groupChatId, maxRetries = 3, retryDelay = 60000) {
     const inputJid = lid.toString();

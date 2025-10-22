@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require("node-fetch")
 
 let handler = async (m, { conn, args }) => {
   const text = args.join(' ').trim();
@@ -35,4 +35,4 @@ handler.help = ['ia', 'chatgpt'];
 handler.tags = ['ai'];
 handler.command = ['ia', 'chatgpt'];
 
-export default handler;
+module.exports = handler;

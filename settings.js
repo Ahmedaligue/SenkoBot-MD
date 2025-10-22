@@ -1,6 +1,6 @@
-import { watchFile, unwatchFile } from "fs"
-import chalk from "chalk"
-import { fileURLToPath } from "url"
+const { watchFile, unwatchFile } = require("fs")
+const chalk = require("chalk")
+const { fileURLToPath } = require("url")
 
 global.botNumber = ""
 
